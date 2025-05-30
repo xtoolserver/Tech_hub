@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mr X Developer</title>
+  <style>
+    body {
+      text-align: center;
+      font-family: Arial, sans-serif;
+      transition: background 0.5s ease;
+      background-color: white;
+      padding-top: 100px;
+    }
+    h1 {
+      font-size: 3em;
+      color: #333;
+    }
+    button {
+      padding: 15px 30px;
+      margin: 10px;
+      font-size: 16px;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+      transition: 0.3s;
+    }
+    #hackBtn { background-color: #f44336; color: white; }
+    #startBtn { background-color: #4CAF50; color: white; }
+    #callBtn { background-color: #2196F3; color: white; }
+    #whatsapp {
+      margin-top: 20px;
+      font-size: 18px;
+      color: green;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>Mr X Developer</h1>
+  <button id="hackBtn">Hack</button>
+  <button id="startBtn">Start</button>
+  <button id="callBtn">Call Me</button>
+
+  <div id="whatsapp">
+    📞 WhatsApp: <a href="https://wa.me/255775710774" target="_blank">+255775710774</a>
+  </div>
+
+  <script>
+    const colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
+    let currentColor = 0;
+
+    document.getElementById("hackBtn").onclick = () => {
+      const color = "#" + Math.floor(Math.random()*16777215).toString(16);
+      document.body.style.backgroundColor = color;
+    };
+
+    document.getElementById("startBtn").onclick = () => {
+      let index = 0;
+      const interval = setInterval(() => {
+        document.body.style.backgroundColor = colors[index];
+        index++;
+        if (index >= colors.length) {
+          clearInterval(interval);
+          setTimeout(() => {
+            document.body.style.backgroundColor = "#111"; // dark
+          }, 500);
+        }
+      }, 300);
+    };
+
+    document.getElementById("callBtn").onclick = () => {
+      document.getElementById("whatsapp").style.display = "block";
+    };
+  </script>
+</body>
+    </html>
